@@ -6,6 +6,10 @@ class Api::Users::TopicsController < ApplicationController
     head 201
   end
 
+  def index
+    render json: @user.topics, status: :ok
+  end
+
   private
 
   def set_user
