@@ -8,6 +8,15 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def signin
+    user = User.where(username: params[:user][:username], password: params[:user][:password]).first
+    if user
+      render json: user, status: :ok
+    else
+      head :not_found
+    end
+  end
+
   private
 
   def user_params

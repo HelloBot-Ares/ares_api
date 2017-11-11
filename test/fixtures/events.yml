@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  subject: MyString
+  place_address: MyString
+  place_name: MyString
+  starting_at: 2017-11-11 17:11:14
+
+two:
+  subject: MyString
+  place_address: MyString
+  place_name: MyString
+  starting_at: 2017-11-11 17:11:14
