@@ -22,7 +22,8 @@ class Api::Users::EventsController < ApplicationController
 
   def event_params
     params.require(:event).permit(
-      :subject, :owner_id, :starting_at, :place_name, :place_address, :topic_id
+      :subject, :owner_id, :starting_at, :place_name, :place_address,
+      :topic_id, :max_participants
     )
   end
 end

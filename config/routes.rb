@@ -12,5 +12,7 @@ Rails.application.routes.draw do
     resources :events, only: [:index] do
       resources :participants, only: [:create, :index], controller: "events/participants"
     end
+
+    post "search", to: "events#search"
   end
 end
