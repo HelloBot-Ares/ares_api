@@ -6,8 +6,11 @@ Rails.application.routes.draw do
     get "topics", to: "topics#index"
     resources :users, only: [] do
       resources :topics, only: [:create, :index], controller: "users/topics"
+      resources :events, only: [:create, :index], controller: "users/events"
     end
 
-    resources :events, only: [:create]
+    resources :events, only: [:index] do
+      resources :participants, only: [:create, :index], controller: "events/participants"
+    end
   end
 end

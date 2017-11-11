@@ -23,6 +23,9 @@ gem 'searchkick'
 
 gem "rack-cors", :require => "rack/cors"
 
+gem "pry"
+gem "pry-rails"
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
