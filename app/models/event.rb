@@ -1,5 +1,5 @@
 class Event < ApplicationRecord
-  searchkick
+  searchkick locations: ["location"]
 
   def search_data
     custom_attrs = {

@@ -11,6 +11,7 @@ class EventSearch
 
   def search_params
     {
+      location: location_query,
       max_participants: max_participants,
       starting_at: starting_at,
       topic_id: @params[:topic_id].to_i
@@ -30,7 +31,7 @@ class EventSearch
     return nil unless position
     {
       near: position,
-      within: "20km"
+      within: "60km"
     }
   end
 
