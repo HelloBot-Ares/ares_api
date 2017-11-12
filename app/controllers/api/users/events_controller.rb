@@ -17,6 +17,10 @@ class Api::Users::EventsController < ApplicationController
   private
 
   def set_user
+    if request_from_telegram
+      @user = User.where telegram_id: params[:user_id]
+      return
+    end
     @user = User.find params[:user_id]
   end
 
