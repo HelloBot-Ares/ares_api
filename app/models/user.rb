@@ -5,8 +5,13 @@ class User < ApplicationRecord
 
   has_many :user_topics
   has_many :topics, through: :user_topics
+
   has_many :event_participants
   has_many :events, through: :event_participants
+
+  def all_events
+    self.events + Event.where(owner_id: self.id)
+  end
 
   def telegram_id_uniqueness
     return unless telegram_id

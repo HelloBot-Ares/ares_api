@@ -11,7 +11,7 @@ class Api::Users::EventsController < ApplicationController
   end
 
   def index
-    render json: @user.events, status: :ok
+    render json: @user.all_events, status: :ok
   end
 
   private
