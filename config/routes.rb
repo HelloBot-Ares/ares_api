@@ -17,7 +17,10 @@ Rails.application.routes.draw do
 
     resources :events, only: [:index] do
       resources :participants, only: [:create, :index], controller: "events/participants"
+      post "telegram_participants", to: "events/participants#telegram_participants"
     end
+
+    post "telegram_events", to: "telegram_events#create", controller: "telegram_events"
 
     post "search", to: "events#search"
   end

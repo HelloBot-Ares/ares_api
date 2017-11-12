@@ -14,3 +14,9 @@ topic_data.each do |topic|
 
   Topic.create name: name, code: code
 end
+
+100.times do
+  FactoryBot.create :event
+end
+
+Topic.all.order(:name).first.destroy

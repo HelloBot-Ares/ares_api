@@ -10,6 +10,11 @@ class Api::Events::ParticipantsController < ApplicationController
     head 201
   end
 
+  def telegram_participants
+    @event.participants << User.find_by(telegram_id: params[:telegram_id].to_i)
+    render json: @event, serializer: ::EventsSerializer, status: :ok
+  end
+
   private
 
   def set_event
