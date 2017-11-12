@@ -9,6 +9,8 @@ class User < ApplicationRecord
   has_many :event_participants
   has_many :events, through: :event_participants
 
+  has_many :owned_events, class_name: "Events", foreign_key: "owner_id"
+
   def all_events
     self.events + Event.where(owner_id: self.id)
   end

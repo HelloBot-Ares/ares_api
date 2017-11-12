@@ -4,14 +4,14 @@ class Api::Users::EventsController < ApplicationController
   def create
     event = Event.new event_params
     if event.save
-      render json: event, status: :ok
+      render json: event, serializer: ::EventsSerializer, status: :ok
     else
       render json: {errors: event.errors}, status: 400
     end
   end
 
   def index
-    render json: @user.all_events, status: :ok
+    render json: @user.all_events, each_serializer: ::EventsSerializer, status: :ok
   end
 
   private

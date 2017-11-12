@@ -18,4 +18,8 @@ class Event < ApplicationRecord
 
   has_many :event_participants
   has_many :participants, through: :event_participants, source: "user"
+
+  belongs_to :owner, class_name: "User"
+
+  belongs_to :topic
 end
