@@ -5,7 +5,7 @@ class Api::TelegramEventsController < ApplicationController
     event.topic_id = params[:event][:topic_id].to_i
     event.starting_at = Time.now + [1, 2, 3].sample.days
     event.place_name = params[:event][:place_name]
-    event.place_address = "Via Maria Vittoria, 38, 10123 Torino TO"
+    event.place_address = "Via rosselli, 101, 13900 Biella BI"
     event.max_participants = [3, 6, 12].sample
     event.owner_id = User.find_by(telegram_id: params[:event][:telegram_id]).id
 
